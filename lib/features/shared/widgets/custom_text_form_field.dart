@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextInputType? keyboardType;
   final Function(String)? onChanged;
+  final Function(String)? onFieldSubmitted;
   final String? Function(String?)? validator;
 
   const CustomTextFormField({
@@ -18,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.onChanged,
     this.validator,
+    this.onFieldSubmitted
   });
 
   @override
@@ -66,6 +68,7 @@ class CustomTextFormField extends StatelessWidget {
           focusColor: colors.primary,
           // icon: Icon( Icons.supervised_user_circle_outlined, color: colors.primary, )
         ),
+        onFieldSubmitted: onFieldSubmitted,
       ),
     );
   }
